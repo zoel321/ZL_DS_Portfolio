@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Zoe Liao</title>
+    <link>https://zoel321.github.io/ZL_DS_Portfolio/projects/</link>
+    <description>Recent content in Projects on Zoe Liao</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://zoel321.github.io/ZL_DS_Portfolio/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Covid-19 Vaccine Adverse Event Dashboard</title>
+      <link>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-5/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-5/</guid>
+      <description>The goal of this project was to create a data storage and processing pipeline for an interactive dashboard to visualize summary information for Covid-19 vaccines&#39; adverse effects. The self-reported adverse event data was from VAERS, which was subsequently cleaned and processed to create table and graph components for the dashboard: details on the max number of cases reported, the demographics for reports per vaccine, and the most frequently reported symptoms.</description>
+    </item>
+    
+    <item>
+      <title>Spotify Mental Health Podcast Recommender</title>
+      <link>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-4/</link>
+      <pubDate>Wed, 23 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-4/</guid>
+      <description>The goal of this project was to create a content-based recommender for mental health podcasts. Descriptions for 350 Spotify podcast shows along with their episode descriptions were retrieved then cleaned and preprocessed using various NLP packages/tools. The topic models derived from the text data for podcasts and episodes were then used to develop the recommendation system. The user will receive a podcast or episode recommendation based on their input.
+Design I focused on mental health podcasts for this project because it is a specific topic (narrows down scope) yet also contains a wide variety of subtopics.</description>
+    </item>
+    
+    <item>
+      <title>Predicting Rehospitalization</title>
+      <link>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-3/</link>
+      <pubDate>Wed, 26 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-3/</guid>
+      <description>The goal of this project was to use classification to predict rehospitalization (either &amp;lt;30 days or &amp;gt;30 days, vs. no rehospitalization) using the US Hospitals 1999-2008 Diabetes dataset , which consists of de-identified healthcare data for inpatient visits. Random forest, logistic regression, and XGBoost models were tried. After using the final logistic regression model to predict rehospitalization on the test data, the F1 score was 0.529 while the accuracy was 60.</description>
+    </item>
+    
+    <item>
+      <title>Predicting TripAdvisor Review Scores</title>
+      <link>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-2/</link>
+      <pubDate>Wed, 15 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-2/</guid>
+      <description>The goal of this project was to predict the TripAdvisor review score of hotels (between 1-5 stars) based on certain features of the hotel, using a linear regression model built from data scraped from current TripAdvisor hotel listings in Australia.
+Design The focus of this project is on the hotels located in Australia’s top vacation destinations. Insights from this analysis can help hotel management and investors, as they can see which areas are worth focusing on to improve the popularity of their hotel.</description>
+    </item>
+    
+    <item>
+      <title>Exploratory Data Analysis: NYC MTA Data</title>
+      <link>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-1/</link>
+      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://zoel321.github.io/ZL_DS_Portfolio/projects/project-1/</guid>
+      <description>The goal of this project was to analyze New York City’s MTA Transit data, to see which MTA station near New York University has the most exit foot traffic during the Fall Move-In period/start of classes.
+Design My hypothetical client, the Bonomi Family Admissions Center at NYU, wants me to figure out a way to help incoming freshmen and transfer students navigate to their desired campus destinations (dorm buildings, classrooms, etc.</description>
+    </item>
+    
+  </channel>
+</rss>

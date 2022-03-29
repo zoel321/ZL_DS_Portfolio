@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Exploratory Data Analysis: NYC MTA Data | Zoe Liao</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Most popular MTA station at New York University during Fall Move-In">
+    <meta name="generator" content="Hugo 0.92.2" />
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+
+    
+<link rel="stylesheet" href="https://zoel321.github.io/ZL_DS_Portfolio/ananke/css/main.min.css" >
+
+
+
+    
+    
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Exploratory Data Analysis: NYC MTA Data" />
+<meta property="og:description" content="Most popular MTA station at New York University during Fall Move-In" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zoel321.github.io/ZL_DS_Portfolio/projects/project-1/" /><meta property="article:section" content="projects" />
+<meta property="article:published_time" content="2021-11-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-10T00:00:00+00:00" /><meta property="og:site_name" content="Zoe Liao" />
+
+<meta itemprop="name" content="Exploratory Data Analysis: NYC MTA Data">
+<meta itemprop="description" content="Most popular MTA station at New York University during Fall Move-In"><meta itemprop="datePublished" content="2021-11-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-11-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="458">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Exploratory Data Analysis: NYC MTA Data"/>
+<meta name="twitter:description" content="Most popular MTA station at New York University during Fall Move-In"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://zoel321.github.io/ZL_DS_Portfolio/images/project-images/mta.jpg');">
+    <div class="bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://zoel321.github.io/ZL_DS_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Zoe Liao
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://zoel321.github.io/ZL_DS_Portfolio/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://zoel321.github.io/ZL_DS_Portfolio/post/" title="Blog Posts page">
+              Blog Posts
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://zoel321.github.io/ZL_DS_Portfolio/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+    <a href="https://github.com/zoel321" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://www.linkedin.com/in/zoeliao/" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div>
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Exploratory Data Analysis: NYC MTA Data</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Most popular MTA station at New York University during Fall Move-In
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Exploratory Data Analysis: NYC MTA Data</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-11-10T00:00:00Z">November 10, 2021</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>The goal of this project was to analyze New York City’s MTA Transit data, to see which MTA station near New York University has the most exit foot traffic during the Fall Move-In period/start of classes.</p>
+<h4 id="design">Design</h4>
+<p>My hypothetical client, the Bonomi Family Admissions Center at NYU, wants me to figure out a way to help incoming freshmen and transfer students navigate to their desired campus destinations (dorm buildings, classrooms, etc.) during the beginning of Fall semester. Adapting to an urban campus as an incoming university freshman or transfer student can be overwhelming. It’s challenging to figure out who to ask, and not every building in the area is a campus building. This project aims to find the best time and location for placing upperclassman volunteers at each of the 4 stations closest to NYU, in proportion to the volume of people exiting the station.</p>
+<h4 id="data">Data</h4>
+<p>The dataset from 4 months (mid-Aug to mid-Sept from years 2018-2021) contains 3293897 rows. I narrowed down to the data to focus on turnstile exits at 4 stations: Astor Place, 8th-Street NYU, West 4th St-Washington Sq, and Christopher St-Sheridan Sq. These stations were listed on the NYU website, and combined they represent stops for the following lines: A, B, C, D, E, F, M, N, R, W, 1, and 6. They also connect to popular travel hubs: Grand Central Station, Port Authority, and the La Guardia/JFK/Newark airports. I focused on exits to depict the foot traffic entering onto campus, but this is still an overestimate as not everyone exiting the station is an NYU student.</p>
+<h4 id="tools">Tools</h4>
+<ul>
+<li>
+<p>SQLAlchemy to import data from the SQLite database into Python</p>
+</li>
+<li>
+<p>Matplotlib and Seaborn for plotting/visualizations</p>
+</li>
+<li>
+<p>Numpy and Pandas for data manipulation</p>
+</li>
+</ul>
+<h4 id="process">Process</h4>
+<p>To compare the timing of move-in and start of Fall classes with the number of exits each day, I plotted 4 time-series graphs (one for each station) with each year as a line. The x-axis was standardized since each year’s data was from the same set of days.</p>
+<p><figure><img src="https://zoel321.github.io/ZL_DS_Portfolio/images/project-images/astor_line.png"/>
+</figure>
+
+<figure><img src="https://zoel321.github.io/ZL_DS_Portfolio/images/project-images/christopher_st_line.png"/>
+</figure>
+
+<figure><img src="https://zoel321.github.io/ZL_DS_Portfolio/images/project-images/eigth_st_line.png"/>
+</figure>
+
+<figure><img src="https://zoel321.github.io/ZL_DS_Portfolio/images/project-images/west_fourth_line.png"/>
+</figure>
+</p>
+<p>To explore the most popular timeframe, I plotted the exit data into stacked bar charts graphs, with each graph representing a different year. Each stacked bar represents the total number of exits from the station within each time period (8am to 12pm, 12pm to 4pm, or 4pm to 8pm.</p>
+<figure><img src="https://zoel321.github.io/ZL_DS_Portfolio/images/project-images/stacked_bars.png"/>
+</figure>
+
+<h4 id="results">Results</h4>
+<p>The results showed that there was no sharp increase in exit foot traffic during Move-In week or the first week of classes (as I&rsquo;d thought). The West 4th-Washington Sq station was consistently the most popular station, with 4-8pm being the busiest time period. The exit traffic on weekdays in 2020 and 2021 are lower compared to the years before the pandemic, when classes were fully in-person.</p>
+<p><a href="https://github.com/zoel321/nyu-mta-project">Link to GitHub Repository</a></p>
+<p>This project was made at <a href="https://www.thisismetis.com/bootcamps/online-data-engineering-bootcamp">Metis</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://zoel321.github.io/ZL_DS_Portfolio/" >
+    &copy;  Zoe Liao 2022 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+    <a href="https://github.com/zoel321" target="_blank" class="github ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="GitHub link" rel="noopener" aria-label="follow on GitHub——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+    <a href="https://www.linkedin.com/in/zoeliao/" target="_blank" class="LinkedIn ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+      
+        <span class="icon"><svg style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span>
+      
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000"  xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;"/>
+</svg>
+</span></a>
+  
+</div></div>
+  </div>
+</footer>
+
+  </body>
+</html>
